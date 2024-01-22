@@ -1,6 +1,7 @@
 using System;
 using System.IO;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 class Program
 {
 
@@ -57,7 +58,7 @@ class Program
                     // Console.WriteLine("Success Choice 4!");
                     break;
                 case 5:
-                    // Quit
+                    // Quite
                     Console.WriteLine("\nThank you for using the Journal App!\n");
                     break;
                 default:
@@ -108,7 +109,7 @@ What would you like to do? ";
         // Displays Saturday, March 01, 2008 7:00:00 AM
         return currentDateTime;
     }
-    static void AddJournalEntry()
+    public void AddJournalEntry()
     // Method to add entry to text file
     {
         string MyJournalFile = "MyJournal.txt";

@@ -1,5 +1,5 @@
 using System;
-
+using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -7,8 +7,8 @@ public class Journal
 {
     // variables
     public List<JournalEntry> _journal = new List<JournalEntry>();
-    // private string fileName = "MyJournal.txt";
-    public string _userFileName;
+    public string fileName = "MyJournal.txt";
+    private string _userFileName;
 
 
     // method
@@ -62,15 +62,16 @@ public class Journal
     }
 
     public void AppendJournalFile(string _userFileName)
-{
-    using (StreamWriter outputFile = new StreamWriter(_userFileName, true))
+    // Method to save a new entry to journal txt file 
     {
-        foreach (JournalEntry journalEntry in _journal)
+        using (StreamWriter outputFile = new StreamWriter(_userFileName, append: true))
         {
-            outputFile.WriteLine($"{journalEntry._entryNumber}; {journalEntry._dateTime}; {journalEntry._journalPrompt}; {journalEntry._journalEntry}");
+            foreach (JournalEntry journalEntry in _journal)
+            {
+                outputFile.WriteLine($"{journalEntry._entryNumber}; {journalEntry._dateTime}; {journalEntry._journalPrompt}; {journalEntry._journalEntry}");
+            }
         }
     }
-}
 
     public void LoadJournalFile()
     // Method to check if txt file is created and load it into the list.  
