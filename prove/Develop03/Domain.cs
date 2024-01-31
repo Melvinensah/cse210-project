@@ -35,7 +35,7 @@ using System;
         //--------------------- (Methods - Behaviors) ------------------------
         //--------------------- Getter & Setter section ----------------------
         //--------------------- (Not necessary) ------------------------------
-        /*     public string GetReference(){
+             public string GetReference(){
                 //See the value of _book
                 return _reference;
             }
@@ -51,7 +51,7 @@ using System;
                 //Put the value of _book
                 _scripture = scriptureSetted; 
             } 
-        */
+        
         //--------------------- Methods (functions) --------------------------
 
         public string CompletePhase()
